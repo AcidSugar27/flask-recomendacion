@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Neumáticos</title>
+    <!-- Agregar enlaces a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario Neumáticos</h1>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label>¿Según su experiencia automovilística qué tan frecuente se moviliza en su automóvil?</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="frecuencia" value="A" required>
+                    <label class="form-check-label">Poco frecuente</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="frecuencia" value="B" required>
+                    <label class="form-check-label">Muy frecuente</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Qué prioriza más, el confort del manejo o el rendimiento?</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="prioridad_manejo" value="A" required>
+                    <label class="form-check-label">Manejo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="prioridad_manejo" value="B" required>
+                    <label class="form-check-label">Rendimiento</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Prefiere un neumático que ofrezca una mayor vida útil o está dispuesto a sacrificar durabilidad por rendimiento?</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="preferencia_vida_util" value="A" required>
+                    <label class="form-check-label">Vida Útil</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="preferencia_vida_util" value="B" required>
+                    <label class="form-check-label">Durabilidad</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Qué preferencia de tamaño tiene con relación al ancho de los neumáticos?</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="preferencia_robustez" value="A" required>
+                    <label class="form-check-label">Robusto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="preferencia_robustez" value="B" required>
+                    <label class="form-check-label">Poco robusto</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Qué porcentaje de uso tiene con relación a los diferentes terrenos?</label>
+                <br>
+                <label>Porcentaje de terreno rocoso:</label>
+                <input type="number" name="porcentaje_rocoso" min="0" max="100" class="form-control" required>
+                <br>
+                <label>Porcentaje de terreno sólido:</label>
+                <input type="number" name="porcentaje_solido" min="0" max="100" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Agregar enlaces a Bootstrap JS y Popper.js (requeridos para los componentes de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
