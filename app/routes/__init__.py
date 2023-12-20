@@ -1,8 +1,14 @@
 from flask import Blueprint
 
-main_bp = Blueprint('main', __name__)
-usuarios_bp = Blueprint('usuarios', __name__)
-formulario_bp = Blueprint('formulario', __name__)
+
+from .usuarios_ruta import usuarios_bp
+from .recomendaciones_ruta import recomendaciones_bp
+#from .neumaticos_routes import neumaticos_bp
+from .citas_ruta import citas_bp
 
 
-from . import main, usuarios, formulario
+def register_routes(app):
+    app.register_blueprint(usuarios_bp)
+    app.register_blueprint(recomendaciones_bp)
+   # app.register_blueprint(neumaticos_bp)
+    app.register_blueprint(citas_bp)

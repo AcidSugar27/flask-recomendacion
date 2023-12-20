@@ -15,13 +15,13 @@
     <h2 class="mb-4">Formulario de Usuarios</h2>
     <form action="{{ url_for('usuarios.agregar_usuario') }}" method="post">
         <div class="form-group">
-            <label for="Nombre">Nombre:</label>
-            <input type="text" class="form-control" name="Nombre" placeholder="Ingrese el nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="solo letras y espacios"   required>
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="solo letras y espacios"   required>
         </div>
 
         <div class="form-group">
-            <label for="NumeroContacto">Número de Contacto:</label>
-            <input type="text" class="form-control" name="NumeroContacto" placeholder="Ingrese el número de contacto" pattern="[0-9]{10}" title="Ingrese un número de contacto válido de 10 dígitos" required>
+            <label for="numero_contacto">Número de Contacto:</label>
+            <input type="text" class="form-control" name="numero_contacto" placeholder="Ingrese el número de contacto" pattern="[0-9]{10}" title="Ingrese un número de contacto válido de 10 dígitos" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Enviar</button>

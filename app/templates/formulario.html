@@ -1,87 +1,81 @@
-
+<!-- templates/crear_recomendacion.html -->
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Neumáticos</title>
-    <!-- Agregar enlaces a Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <title>Formulario de Recomendaciones</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Agrega tu hoja de estilo personalizada si es necesario -->
+    <link rel="stylesheet" href="tu_estilo.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Formulario Neumáticos</h1>
-        <form action="/submit" method="post">
-            <div class="form-group">
-                <label>¿Según su experiencia automovilística qué tan frecuente se moviliza en su automóvil?</label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="frecuencia" value="A" required>
-                    <label class="form-check-label">Poco frecuente</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="frecuencia" value="B" required>
-                    <label class="form-check-label">Muy frecuente</label>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label>¿Qué prioriza más, el confort del manejo o el rendimiento?</label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="prioridad_manejo" value="A" required>
-                    <label class="form-check-label">Manejo</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="prioridad_manejo" value="B" required>
-                    <label class="form-check-label">Rendimiento</label>
-                </div>
-            </div>
+<div class="container mt-5">
+    <h2>Formulario de Recomendaciones</h2>
+    <h2>Bienvenido, {{ nuevo_usuario.nombre }}</h2>
+    <form method="POST" action="{{ url_for('recomendaciones.recomendaciones') }}">
+        <div class="form-group">
+            <label for="dureza_caucho">1. ¿Qué preferencia tiene con relación a la dureza del coche en las vías?</label>
+            <select class="form-control" name="dureza_caucho" required>
+                <option value="caucho_duro">Caucho Duro</option>
+                <option value="caucho_semiblando">Caucho Semiblando</option>
+                <option value="caucho_suave">Caucho Suave</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label>¿Prefiere un neumático que ofrezca una mayor vida útil o está dispuesto a sacrificar durabilidad por rendimiento?</label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="preferencia_vida_util" value="A" required>
-                    <label class="form-check-label">Vida Útil</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="preferencia_vida_util" value="B" required>
-                    <label class="form-check-label">Durabilidad</label>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="estilo_conduccion">2. ¿Qué estilo de conducción frecuenta?</label>
+            <select class="form-control" name="estilo_conduccion" required>
+                <option value="baja_velocidad">Baja Velocidad</option>
+                <option value="media_velocidad">Media Velocidad</option>
+                <option value="alta_velocidad">Alta Velocidad</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label>¿Qué preferencia de tamaño tiene con relación al ancho de los neumáticos?</label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="preferencia_robustez" value="A" required>
-                    <label class="form-check-label">Robusto</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="preferencia_robustez" value="B" required>
-                    <label class="form-check-label">Poco robusto</label>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="estructura_neumatico">3. ¿Qué preferencia tiene acerca de la estructura interna del neumático?</label>
+            <select class="form-control" name="estructura_neumatico" required>
+                <option value="radial">Radial</option>
+                <option value="diagonal">Diagonal</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label>¿Qué porcentaje de uso tiene con relación a los diferentes terrenos?</label>
-                <br>
-                <label>Porcentaje de terreno rocoso:</label>
-                <input type="number" name="porcentaje_rocoso" min="0" max="100" class="form-control" required>
-                <br>
-                <label>Porcentaje de terreno sólido:</label>
-                <input type="number" name="porcentaje_solido" min="0" max="100" class="form-control" required>
-            </div>
+        <div class="form-group">
+            <label for="tipo_ambiente">4. ¿En qué tipo de ambiente suele movilizarse?</label>
+            <select class="form-control" name="tipo_ambiente" required>
+                <option value="seco">Seco</option>
+                <option value="mojado">Mojado</option>
+                <option value="ambos">Ambos</option>
+            </select>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-    </div>
+        <div class="form-group">
+            <label for="altura_anchura">5. ¿Qué preferencia tiene con relación a la altura/anchura del neumático?</label>
+            <select class="form-control" name="altura_anchura" required>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+        </div>
 
-    <!-- Agregar enlaces a Bootstrap JS y Popper.js (requeridos para los componentes de Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="form-group">
+            <label for="tipo_vehiculo">6. ¿Qué tipo de vehículo usted conduce?</label>
+            <select class="form-control" name="tipo_vehiculo" required>
+                <option value="sedan">Sedán</option>
+                <option value="suv">SUV</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Agregar Recomendación</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="tu_script.js"></script>
+
 </body>
 </html>
